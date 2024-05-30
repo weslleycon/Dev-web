@@ -17,7 +17,7 @@
                 <span class="separador">
 
                 </span>
-                <img src="../assets/logo-zeus.jpg" alt="" class="foto-login">
+                <!-- <img src="../assets/logo-zeus.jpg" alt="" class="foto-login"> -->
             </div>
 
         </div>
