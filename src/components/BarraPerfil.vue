@@ -1,10 +1,10 @@
 <template>
     <main class="apresentacao-perfil">
              <div class="logo-titulo">
-            <!-- <img src="../assets/logo-zeuus.png" alt="logo do zeus" class="logo"> -->
+            <img src="../assets/logo-pata.jpg" alt="logo do petFood" class="logo">
             <h2 class="titulo-logo">
                
-                    Zeus
+                    PetFood
                     
             </h2>
         </div>
@@ -126,7 +126,7 @@ this.$router.push('/login')
     width: 30%;
 }
 .logo {
-    width: 46%;
+    width:26%;
 
 }
 .link-rota {

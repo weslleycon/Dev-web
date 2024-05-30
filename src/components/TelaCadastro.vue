@@ -10,14 +10,17 @@
                 <form class="formulario">
                   <!-- <CadastroLogin /> -->
                     <div class="acoes-cadastro">
-                        <!-- <EsqueceuSenha />
-                        <CadastrarUsuario /> -->
+                        <EsqueceuSenha />
+                        <CadastroUsuario />
                     </div>
                 </form>
                 <span class="separador">
 
                 </span>
-                <!-- <img src="../assets/logo-zeus.jpg" alt="" class="foto-login"> -->
+                <div class="foto" >
+                    <img src="../assets/logo-pata.jpg" alt="" class="foto-login">
+                </div>
+                
             </div>
 
         </div>
@@ -25,16 +28,16 @@
     </div>
 </template>
 <script lang="ts">
-// import Dialog from 'primevue/dialog';
+import Dialog from 'primevue/dialog';
 import { defineComponent } from 'vue';
-// import CadastrarUsuario from './CadastrarUsuario.vue';
-// import EsqueceuSenha from './EsqueceuSenha.vue';
+import CadastroUsuario from './CadastroUsuario.vue';
+import EsqueceuSenha from './EsqueceuSenha.vue';
 // import CadastroLogin from './CadastroLogin.vue';
 
 export default defineComponent({
 components:{
-//    CadastrarUsuario,
-//    EsqueceuSenha, 
+   CadastroUsuario,
+   EsqueceuSenha, 
 //    CadastroLogin
 },
 data(){
@@ -80,6 +83,10 @@ methods:{
     justify-content: center;
     font-size: 26px;
     color: white;
+}
+
+.foto{
+    width: 50%;
 }
 
 .formulario{
