@@ -128,7 +128,7 @@ flex-direction: column;
 }
 .tela-cadastro-usuario{
 align-items: center;
-padding: 16% 22%;
+padding: 16% 36%;
 display: flex;
 flex-direction: column;   
 }
@@ -154,7 +154,7 @@ gap:10px;
 }
 .botoes-usuario{
 display: flex;
-gap: 222px;
+gap: 180px;
 margin-top: 10px;
 }
 .enviar {

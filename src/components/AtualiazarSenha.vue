@@ -4,7 +4,7 @@
         
     <div class="tela-cadastro">               
          <h2 class="titulo-update-login">
-                Atualizar seu login ou senha!
+                Atualize seu login ou senha!
          </h2>
          <div class="cadastro-componente-login">
                 <div class="componente-cadastro-1">
@@ -25,7 +25,7 @@
     </div>
     </template>
     <script lang="ts">
-    import { verificarUsuarioLogado } from '@/http';
+    import { realizarLogout, verificarUsuarioLogado } from '@/http';
     import { defineComponent } from 'vue';
 import BarraMenu from './BarraMenu.vue';
     export default defineComponent({
@@ -41,7 +41,9 @@ import BarraMenu from './BarraMenu.vue';
     methods:{
         async realizarAtualizacao(){
             await verificarUsuarioLogado(this.user)
+            await realizarLogout()
             alert('Suas credencias foram atualizadas com sucesso!')
+            this.$router.push('/login')
     
     },
 
@@ -70,6 +72,7 @@ import BarraMenu from './BarraMenu.vue';
         padding: 0px 4px;
 
     }
+  
 .conteudo-apresentacao{
         display: flex;
         flex-direction: column;
@@ -86,11 +89,10 @@ import BarraMenu from './BarraMenu.vue';
     display: flex
 }
 .tela-cadastro{ 
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+  align-items: center;
+padding: 14% 36%;
+display: flex;
+flex-direction: column; 
 }
 .cadastro{
     background-color: aqua;
@@ -115,7 +117,7 @@ import BarraMenu from './BarraMenu.vue';
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-    width: 50%;
+    width: 90%;
     gap: 10px;
     height: 10rem;
     justify-content: center;
@@ -125,11 +127,11 @@ import BarraMenu from './BarraMenu.vue';
 .componente-cadastro-1,.componente-cadastro-2{
     display: flex;
     gap:10px;
-    width: 70%;
+    width:100%;
  }
 .botoes{
     display: flex;
-    gap: 180px;
+    gap: 170px;
 }
 
 .enviar {

@@ -61,7 +61,7 @@ background-color: white;" :pt="{
 </template>
 <script lang="ts">
 import { Cadastrousuario, obterLogin } from '@/http';
-import ListarUsuario from '@/interface/ListarUsuario';
+import type ListarUsuario from '@/interface/ListarUsuario';
 import Dialog from 'primevue/dialog';
 import { defineComponent } from 'vue';
 

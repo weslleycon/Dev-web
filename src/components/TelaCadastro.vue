@@ -8,19 +8,18 @@
             </div>
             <div class="componentes-cadastro">
                 <form class="formulario">
-                  <!-- <CadastroLogin /> -->
+                    <CadastroLogin />
                     <div class="acoes-cadastro">
                         <EsqueceuSenha />
                         <CadastroUsuario />
                     </div>
                 </form>
                 <span class="separador">
-
                 </span>
-                <div class="foto" >
+                <div class="foto">
                     <img src="../assets/logo-pata.jpg" alt="" class="foto-login">
                 </div>
-                
+
             </div>
 
         </div>
@@ -32,34 +31,35 @@ import Dialog from 'primevue/dialog';
 import { defineComponent } from 'vue';
 import CadastroUsuario from './CadastroUsuario.vue';
 import EsqueceuSenha from './EsqueceuSenha.vue';
-// import CadastroLogin from './CadastroLogin.vue';
+import CadastroLogin from './CadastroLogin.vue';
 
 export default defineComponent({
-components:{
-   CadastroUsuario,
-   EsqueceuSenha, 
-//    CadastroLogin
-},
-data(){
-    return{
-        visible: false
+    components: {
+        CadastroUsuario,
+        EsqueceuSenha,
+        CadastroLogin
+    },
+    data() {
+        return {
+            visible: false
+        }
+    },
+    methods: {
+        cancelarCadastro() {
+            this.visible = false;
+        }
     }
-},
-methods:{
-    cancelarCadastro(){
-        this.visible = false;
-    }
-}
 })
 </script>
 <style scoped>
-.tela-cadastro{
+.tela-cadastro {
     align-items: center;
     padding: 9% 10%;
     display: flex;
     justify-content: center;
 }
-.cadastro{
+
+.cadastro {
 
     background-color: aqua;
     text-align: center;
@@ -70,13 +70,15 @@ methods:{
     box-shadow: 0px 4px 9px black;
 
 }
-.componentes-cadastro{
+
+.componentes-cadastro {
     display: flex;
-    align-items:center; 
+    align-items: center;
 
 }
-.titulo-login{
-    background-color: black;
+
+.titulo-login {
+    background-color: darkgray;
     height: 3rem;
     display: flex;
     align-items: center;
@@ -85,29 +87,30 @@ methods:{
     color: white;
 }
 
-.foto{
+.foto {
     width: 50%;
 }
 
-.formulario{
+.formulario {
 
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 50%;
-   justify-content: center;
+    justify-content: center;
     height: 10rem;
     margin-top: 20px;
     align-items: center;
 }
 
-.input-cadastro{
+.input-cadastro {
     box-shadow: 0px 6px 9px #5CB9EE;
     border-radius: 6px;
     height: 3rem;
     width: 70%;
 }
-.input-cadastros{
+
+.input-cadastros {
     box-shadow: 0px 6px 9px #5CB9EE;
     border-radius: 6px;
     height: 2rem;
@@ -115,7 +118,7 @@ methods:{
     background-color: white;
 }
 
-.separador{
+.separador {
     background-color: black;
     display: inline-block;
     height: 21rem;
@@ -123,18 +126,21 @@ methods:{
     width: 1px;
     vertical-align: middle;
 }
-.foto-login{
+
+.foto-login {
     width: 40%;
     height: 0%;
 }
-.acoes-cadastro{
+
+.acoes-cadastro {
     display: flex;
     gap: 20px;
     color: blue;
 
 }
+
 @media screen and (max-width: 576px) {
-    .acoes-cadastro{
+    .acoes-cadastro {
         font-size: 14px;
         gap: 10px;
     }

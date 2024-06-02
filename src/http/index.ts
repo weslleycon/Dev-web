@@ -103,18 +103,11 @@ export async function verificarUsuarioLogado(dadosAtualizados: AtualizarUser) {
         console.log('Usuário logado:', usuarioLogado);
 
         if (usuarioLogado) {
-            // Crie um objeto com os dados do usuário que deseja atualizar
-
-            // Faz a requisição PUT para atualizar os dados do usuário
             const resposta = await axios.put('http://localhost:8080/user', dadosAtualizados);
-            console.log(resposta);
-
-            // Retorna os dados atualizados, se necessário
             return resposta.data;
         }
     } catch (error) {
         console.error('Erro ao verificar usuário logado:', error);
-        // Lide com o erro, exiba uma mensagem para o usuário, etc.
     }
 }
 export async function updateUsuario(atualizarUsuario: AtualizacaoUsuario): Promise<string> {

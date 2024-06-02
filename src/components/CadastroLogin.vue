@@ -21,12 +21,8 @@
 <script lang="ts">
 import Dialog from 'primevue/dialog';
 import { defineComponent } from 'vue';
-import CadastrarUsuario from './CadastrarUsuario.vue';
-import EsqueceuSenha from './EsqueceuSenha.vue';
 import { gerarLogin } from '@/http';
-import Password from 'primevue/password';
-import BarraMenu from './BarraMenu.vue';
-import { useStore } from 'vuex';
+
 
 
 export default defineComponent({
@@ -86,6 +82,7 @@ methods:{
 })
 </script>
 <style scoped>
+
 .login{
     margin-left: 90px;
 }
@@ -98,4 +95,49 @@ methods:{
    justify-content: center;
     height: 10rem;
     margin-top: 20px;
+    align-items: center;
 }
+
+.input-cadastro{
+    box-shadow: 0px 6px 9px #5CB9EE;
+    border-radius: 6px;
+    height: 3rem;   
+    width: 100%;
+    outline: none;
+    padding: 0 4px;
+}
+.componentes-cadastros{
+    display: flex;
+    align-items:center; 
+    
+}
+.tela-cadastro{
+    align-items: center;
+    padding: 8% 10%;
+    display: flex;
+    justify-content: center;
+}
+.enviar {
+    background-color: darkgray;
+    width: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+.enviar:hover {
+    background-color: #5CB9EE;
+    color: white;
+}   
+@media screen and (max-width: 576px) {
+    .componentes-cadastros{
+        width: 90%;
+    }
+    .login{
+        margin-left: 0;
+        margin-right: 10px;
+    }
+  
+}</style>

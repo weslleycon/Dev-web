@@ -43,18 +43,18 @@ export default defineComponent({
         return{
             user: '',
             items: [
-            {
-                    label: 'Sair',
-                    command: this.logout
-                },{
-                    label: 'Atualizar suas informações',
+          {
+                    label: 'Atualizar informações',
                     icon: 'pi pi-icon',
                     command: this.atualizarUser
                 },{
                     label: 'Atualizar login',
                     icon: 'pi pi-icon',
                     command: this.atualizarLogin
-                } 
+                },  {
+                    label: 'Sair',
+                    command: this.logout
+                }
             ],
             atualizar: false
         }
@@ -105,9 +105,7 @@ this.$router.push('/login')
     margin-left: 20%;
 }
 .p-menu-overlay {
-    border-bottom: 20px solid blue; /* Defina a cor e o tamanho desejado para a linha */
-    /* Ou use box-shadow para um efeito de sombra */
-    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); */
+    border-bottom: 20px solid blue;
 }
 .perfil{
     
@@ -117,7 +115,7 @@ this.$router.push('/login')
     align-items: center;
 }
 .p-menuitem {
-    width: 200px; /* Defina o tamanho desejado para os itens */
+    width: 200px;
 }
 .logo-titulo {
     display: flex;

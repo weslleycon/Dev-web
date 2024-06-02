@@ -98,11 +98,11 @@
   
   <script lang="ts">
   import { defineComponent } from 'vue';
-  import ListarRacao from '../interface/ListarRacao';
+  import type ListarRacao from '../interface/ListarRacao';
   import { deleteItem, obterRacao } from '../http';
   import BarraMenu from './BarraMenu.vue';
   import { updateRacao } from '../http';
-  import AtualizarRacao from '@/interface/AtualizarRacao';
+  import type AtualizarRacao from '@/interface/AtualizarRacao';
   
   
   
@@ -143,7 +143,7 @@
         this.visible = true;
       },
       liberarUpdate(item: ListarRacao) {
-        this.item.forEach(i => i.update = false); // Reseta o estado de update para todos os cards
+        this.item.forEach(i => i.update = false);
         item.update = true;
   
       },
@@ -158,12 +158,11 @@
           valorPago: item.valorPago,
           dataCompra: item.dataCompra,
         };
-        let mensagem = ''; // Corrigido para declarar mensagem como uma variável mutável
+        let mensagem = '';
   
   switch(true) {
     case dataAtualizar.nome === '':
-      mensagem = 'O nome da ração não pode ser nula.'; // Atribuição corrigida
-       // Coloquei o alerta dentro do case para exibir a mensagem correta
+      mensagem = 'O nome da ração não pode ser nula.';
       break;
   
     case dataAtualizar.kgQuantidade == null:
@@ -178,12 +177,12 @@
       break;   
   }
   
-  if (mensagem === '') { // Verifica se a mensagem está vazia, ou seja, se não houve erro
+  if (mensagem === '') {
     try {
       await updateRacao(dataAtualizar);
       alert("Ração salva!");
       console.log(dataAtualizar);
-      window.location.reload(); // Recarrega a página após a atualização
+      window.location.reload();
     } catch (error) {
       alert("Verifique se a data está correta")
       console.error('Erro ao atualizar a ração:', error);
@@ -246,7 +245,7 @@
         this.item = racoes.map(racao => ({ ...racao, selecionado: false }));
         this.racoes = racoes.map(racao => ({
           ...racao,
-          dataCompra: new Date(racao.dataCompra).toLocaleDateString('pt-BR') // Convertendo para string no formato desejado
+          dataCompra: new Date(racao.dataCompra).toLocaleDateString('pt-BR')
         }));
         this.valorGasto();
   
@@ -257,7 +256,6 @@
         //   return formattedDate;
       },
       camposPreenchidos(item: AtualizarRacao){
-       // Verifica se todos os campos estão preenchidos
     for (const item of this.item) {
       if (
         item.nome === '' ||
@@ -265,11 +263,9 @@
         item.valorPago === 0 ||
         item.dataCompra === ''
       ) {
-        // Se algum campo estiver vazio, retorna falso
         return false;
       }
     }
-    // Se todos os campos estiverem preenchidos, retorna verdadeiro
     return true;
       }
     },
@@ -313,7 +309,7 @@
   button {
     justify-content: center;
     height: 2rem;
-    border: 2px solid red;
+    border: 2px solid;
     border-radius: 6px;
   
   }
@@ -425,9 +421,7 @@
   .card-container {
     width: 100%;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    /* height: 20rem; */
     flex-direction: column;
     gap: 20px;
     height: 20rem;
@@ -532,7 +526,6 @@
           height: 30rem;
           overflow-y: auto;
           overflow-x: hidden;
-          /* position: absolute; */
           margin-top: 80%;
     }
   }
@@ -542,7 +535,6 @@
           height: 23rem;
           overflow-y: auto;
           overflow-x: hidden;
-          /* position: absolute; */
           margin-top: 28%;
     }
   }
