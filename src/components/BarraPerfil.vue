@@ -32,6 +32,7 @@ import Menu from 'primevue/menu';
 
 import { realizarLogout, userLogado, verificarUsuarioLogado } from '@/http';
 import AtualizarUser from './AtualizarUser.vue';
+import ListarUsuario from './ListarUsuario.vue';
 
 
 export default defineComponent({
@@ -55,6 +56,10 @@ export default defineComponent({
                     label: 'Sair',
                     command: this.logout
                 }
+                ,  {
+                    label: 'Usuarios',
+                    command: this.listarUsuario
+                }
             ],
             atualizar: false
         }
@@ -62,6 +67,9 @@ export default defineComponent({
     methods:{
          async atualizarUser(){
             this.$router.push('/atualizar')
+        },
+        async listarUsuario(){
+            this.$router.push("listarUsuario")
         },
             
         async atualizarLogin(){

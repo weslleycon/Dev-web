@@ -5,6 +5,7 @@ import TelaCadastro from "@/components/TelaCadastro.vue";
 import BarraMenu from "@/components/BarraMenu.vue";
 import AtualizarUser from "@/components/AtualizarUser.vue";
 import AtualizarSenha from "@/components/AtualiazarSenha.vue";
+import ListarUsuario from "@/components/ListarUsuario.vue";
 
 
 const rotas: RouteRecordRaw [] = [{
@@ -27,6 +28,11 @@ const rotas: RouteRecordRaw [] = [{
     name:'AtualizarSenha',
     component:AtualizarSenha
 },
+{
+    path:'/listarUsuario',
+    name:'ListarUsuario',
+    component:ListarUsuario
+}
 ]
 
 const roteador = createRouter({

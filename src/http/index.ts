@@ -8,6 +8,7 @@ import type AtualizarUser from "@/interface/AtualizarUser";
 import type AtualizacaoUsuario from "@/interface/AtualizacaoUsuario";
 import type EsqueceuSenha from "@/interface/EsqueceuSenha";
 import type ListarUsuario from "@/interface/ListarUsuario";
+import type ListarUsuarios from "@/interface/ListarUsuarios";
 
 export async function cadastroRacao(salvarRacao: IRacao): Promise<string> {
     const body = JSON.stringify(salvarRacao);
@@ -20,6 +21,12 @@ export async function obterRacao():Promise<ListarRacao> {
    
     
     return resposta.data.content as ListarRacao;
+}
+export async function obterUsuario():Promise<ListarUsuarios> {
+    const resposta = await axios.get('http://localhost:8080/usuario');
+   
+    
+    return resposta.data.content as ListarUsuarios;
 }
 export async function obterLogin():Promise<ListarUsuario> {
     const resposta = await axios.get('http://localhost:8080/login');
@@ -46,6 +53,11 @@ export async function obterLogin():Promise<ListarUsuario> {
 
     export async function deleteItem(id:number) {
         const resposta = await axios.delete(`http://localhost:8080/racao/${id}`)
+        console.log(resposta , 'excluida');
+        
+    }
+    export async function deleteUsuario(id:number) {
+        const resposta = await axios.delete(`http://localhost:8080/usuario/${id}`)
         console.log(resposta , 'excluida');
         
     }
