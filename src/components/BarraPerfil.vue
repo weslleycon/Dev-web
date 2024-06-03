@@ -52,13 +52,14 @@ export default defineComponent({
                     label: 'Atualizar login',
                     icon: 'pi pi-icon',
                     command: this.atualizarLogin
-                },  {
-                    label: 'Sair',
-                    command: this.logout
                 }
                 ,  {
                     label: 'Usuarios',
                     command: this.listarUsuario
+                }
+                ,  {
+                    label: 'Sair',
+                    command: this.logout
                 }
             ],
             atualizar: false
